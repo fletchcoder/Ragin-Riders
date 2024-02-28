@@ -1,0 +1,155 @@
+.footer {
+	background-color: black;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.info {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	width: 100%;
+}
+
+.info h2 {
+	font-size: 3rem;
+	border-bottom: 5px solid var(--main-bg-color);
+	margin-bottom: 40px;
+}
+
+.info ul li {
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+.info ul li a:hover {
+	text-decoration-color: var(--main-bg-color);
+}
+
+.info ul li a:visited {
+	text-decoration-color: var(--offset-color);
+}
+
+.left,
+.right {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.bottom {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bottom h3 {
+	font-size: 2rem;
+}
+
+.icons {
+	display: flex;
+	width: 30%;
+	justify-content: space-evenly;
+}
+
+.icon {
+	width: 50px;
+	height: 50px;
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: var(--main-bg-color);
+}
+
+.icon:hover {
+	background-color: black;
+	border-color: white;
+}
+
+.icon span {
+	display: flex;
+	margin-top: 10%;
+	justify-content: center;
+}
+
+/* Super Small Mobile */
+@media (max-width: 400px) {
+	.info {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.info h2 {
+		font-size: 2rem;
+		margin-bottom: 0;
+	}
+	.info ul li {
+		font-size: 1.4rem;
+	}
+	.bottom {
+		flex-direction: column;
+		align-items: center;
+	}
+	.bottom h3 {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	.icons {
+		width: 80%;
+	}
+	.icon {
+		width: 35px;
+		height: 35px;
+	}
+}
+
+/* Mobile */
+@media (min-width: 401px) and (max-width: 700px) {
+	.info {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.info h2 {
+		font-size: 2.3rem;
+		margin-bottom: 0;
+	}
+	.info ul li {
+		font-size: 1.5rem;
+	}
+	.bottom {
+		flex-direction: column;
+		align-items: center;
+	}
+	.bottom h3 {
+		font-size: 1.6rem;
+	}
+	.icons {
+		width: 100%;
+	}
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+	.icons {
+		width: 40%;
+	}
+	.icon {
+		width: 55px;
+		height: 55px;
+	}
+	.icon span {
+		display: flex;
+		margin-top: 10%;
+		justify-content: center;
+	}
+	.icon svg {
+		width: 45px;
+		height: 45px;
+	}
+}
