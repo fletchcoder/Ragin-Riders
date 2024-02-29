@@ -9,12 +9,8 @@ import styles from "@/styles/page.module.css";
 export default function Home() {
 	const [bar, showBar] = useState(false);
 
-	function showSideBar(): void {
-		showBar(true);
-	}
-
-	function hideSideBar(): void {
-		showBar(false);
+	function toggleBar(): void {
+		showBar(!bar);
 	}
 
 	return (
@@ -33,7 +29,7 @@ export default function Home() {
 									</Link>
 									<svg
 										onClick={() => {
-											hideSideBar();
+											toggleBar();
 										}}
 										className={styles.close}
 										xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +84,7 @@ export default function Home() {
 								<li className={styles.menu}>
 									<svg
 										onClick={() => {
-											showSideBar();
+											toggleBar();
 										}}
 										xmlns="http://www.w3.org/2000/svg"
 										height="50"

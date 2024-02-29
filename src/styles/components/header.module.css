@@ -8,6 +8,7 @@
 
 .header img {
 	background-color: var(--main-bg-color);
+	height: 100%;
 }
 
 .header img:hover {
@@ -34,15 +35,127 @@
 	height: 100%;
 }
 
+.left svg {
+	fill: white;
+	display: none;
+}
+
 .right {
 	color: white;
 	display: flex;
 	font-size: 20px;
 	justify-content: space-evenly;
+	align-items: center;
 	width: 10%;
 	height: 100%;
 }
 
 .right svg {
 	fill: white;
+	width: 40px;
+	height: 40px;
+}
+
+.sidebar {
+	height: 100vh;
+	width: 250px;
+	background-color: black;
+	position: fixed;
+	z-index: 999;
+	display: inline;
+}
+
+.sidebar nav {
+	height: 30%;
+}
+
+.sidebar nav ul {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.sidebar nav ul li {
+	display: flex;
+	justify-content: space-between;
+}
+
+.close {
+	fill: white;
+}
+
+.hidebar {
+	display: none;
+}
+
+/* Super Small Mobile */
+@media (max-width: 400px) {
+	.left,
+	.right {
+		width: 50%;
+	}
+	.left {
+		justify-content: flex-start;
+	}
+	.left svg {
+		display: inline;
+	}
+	.left nav {
+		display: none;
+	}
+	.right {
+		font-size: 15px;
+		justify-content: flex-end;
+	}
+	.right svg {
+		margin-right: 10px;
+	}
+	.sidebar {
+		width: 100%;
+	}
+	.sidebar nav ul {
+		font-size: 40px;
+	}
+}
+
+/* Mobile */
+@media (min-width: 401px) and (max-width: 700px) {
+	.left,
+	.right {
+		width: 50%;
+	}
+	.left {
+		justify-content: flex-start;
+	}
+	.left svg {
+		display: inline;
+	}
+	.left nav {
+		display: none;
+	}
+	.right {
+		font-size: 18px;
+		justify-content: flex-end;
+	}
+	.right svg {
+		margin-right: 10px;
+	}
+	.sidebar nav ul {
+		font-size: 30px;
+	}
+	.close {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+/* Tablets and Small Desktops */
+@media (min-width: 701px) and (max-width: 1120px) {
+	.left {
+		width: 85%;
+	}
+	.right {
+		width: 15%;
+	}
 }
