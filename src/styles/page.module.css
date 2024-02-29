@@ -66,7 +66,8 @@
 }
 
 .close {
-	margin-left: 65%;
+	position: fixed;
+	right: 0;
 }
 
 .navbar {
@@ -155,6 +156,7 @@
 	flex-direction: column;
 	align-items: center;
 	background-color: var(--main-bg-color);
+	z-index: 2;
 }
 
 .products h1 {
@@ -345,8 +347,8 @@
 		font-size: 3rem;
 	}
 	.tagline {
-		margin-top: 12rem;
-		font-size: 6.5rem;
+		margin-top: 7rem;
+		font-size: 6rem;
 	}
 	.about h1 {
 		font-size: 5rem;
@@ -358,21 +360,23 @@
 		width: 90%;
 		scrollbar-color: var(--main-bg-color) black;
 	}
-	.part {
-		margin-bottom: 20px;
-		height: 260px;
-		font-size: 3rem;
-	}
-	.select {
-		display: grid;
-		grid-template-columns: repeat(2, 400px);
-		justify-content: space-evenly;
-		height: 300px;
-		width: 90%;
-	}
 	.products h1 {
 		font-size: 5rem;
 		margin-bottom: 0;
+	}
+	.select {
+		display: grid;
+		grid-template-columns: repeat(2, 300px);
+		gap: 20px;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+	.part {
+		margin-bottom: 20px;
+		height: 260px;
+		width: 300px;
+		font-size: 3rem;
 	}
 }
 
