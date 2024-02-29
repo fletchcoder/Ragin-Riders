@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+import { inter } from "@/lib/fonts/font";
 
 export const metadata: Metadata = {
 	title: `Ragin' Riders - Motorcycle Parts, Accessories & More`,
@@ -14,7 +15,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className={inter.className}>{children}</body>
 		</html>
 	);
 }
