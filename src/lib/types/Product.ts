@@ -16,10 +16,12 @@ const productSchema = new mongoose.Schema(
 	}
 );
 
+export const productModel = mongoose.model("Product", productSchema);
+
 export type Product = {
 	id: number;
 	name: string;
-	image: string;
+	images: [];
 	price: number;
 	description: string;
 	category: string;
