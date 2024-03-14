@@ -23,11 +23,12 @@ const productModel = mongoose.model("Product", productSchema);
 export default productModel;
 
 export type Product = {
+	_id: string;
 	id: number;
 	name: string;
 	brand: string;
 	slug: string;
-	images: [];
+	images: string[];
 	price: number;
 	description: string;
 	category: string;
