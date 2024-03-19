@@ -14,7 +14,7 @@ export default function Item({ product }: { product: Product }) {
 					src={product.images[0]}></Image>
 			</Link>
 			<div className={styles.info}>
-				{product.name}
+				<Link href={`/shop/${product.slug}`}>{product.name}</Link>
 				<div>
 					<span>$</span>
 					{product.price}

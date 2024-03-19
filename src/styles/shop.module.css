@@ -7,3 +7,9 @@
 	width: 100%;
 	font-family: "Copperplate", fantasy;
 }
+
+.container {
+	display: flex;
+	width: 100%;
+	background-color: red;
+}
