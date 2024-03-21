@@ -1,4 +1,6 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
 	webpack(config, { isServer }) {
 		const prefix = config.assetPrefix ?? config.basePath ?? "";
 		config.module.rules.push({
@@ -17,4 +19,14 @@ module.exports = {
 
 		return config;
 	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "i.ibb.co",
+			},
+		],
+	},
 };
+
+module.exports = nextConfig;
