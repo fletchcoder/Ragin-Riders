@@ -8,8 +8,8 @@ export default function Item({ product }: { product: Product }) {
 		<div className={styles.card}>
 			<Link href={`/shop/${product.slug}`}>
 				<Image
-					height={400}
-					width={400}
+					height={250}
+					width={250}
 					alt={`${product.name} | Ragin' Riders`}
 					src={product.images[0]}></Image>
 			</Link>

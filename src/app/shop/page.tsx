@@ -19,9 +19,25 @@ export default async function Shop() {
 			<main className={styles.main}>
 				<Header />
 				<section className={styles.container}>
-					{orderedProducts.map((product) => (
-						<Item key={product.id} product={product} />
-					))}
+					<div className={styles.left}>
+						<div className={styles.category}>
+							BRAND
+							<span className={styles.arrow}>&#10151;</span>
+						</div>
+						<div className={styles.category}>
+							CATEGORY
+							<span className={styles.arrow}>&#10151;</span>
+						</div>
+						<div className={styles.category}>
+							PRICE
+							<span className={styles.arrow}>&#10151;</span>
+						</div>
+					</div>
+					<div className={styles.right}>
+						{orderedProducts.map((product) => (
+							<Item key={product.id} product={product} />
+						))}
+					</div>
 				</section>
 				<Footer />
 			</main>

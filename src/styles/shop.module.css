@@ -11,5 +11,43 @@
 .container {
 	display: flex;
 	width: 100%;
-	background-color: red;
+}
+
+.left {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	height: 100%;
+}
+
+.category {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	width: 100%;
+	height: 10%;
+	font-size: 2rem;
+}
+
+.arrow {
+	margin-left: 1rem;
+	font-size: 3rem;
+	transform: rotate(90deg);
+}
+
+.category:hover {
+	color: var(--main-bg-color);
+	cursor: pointer;
+}
+
+.right {
+	display: grid;
+	row-gap: 3rem;
+	grid-template-columns: repeat(4, 1fr);
+	width: 70%;
+	overflow-y: scroll;
+	scrollbar-color: var(--main-bg-color) white;
+	scrollbar-width: thin;
 }
