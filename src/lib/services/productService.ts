@@ -4,15 +4,21 @@ import productModel, { Product } from "../types/Product";
 
 export const revalidate = 3600;
 
-const getInOrder = cache(async () => {
-	await dbConnect();
-	const products = await productModel.find({}).sort({ id: 1 }).lean();
+const getProducts = cache(
+	async ({ page = 1, limit = 8 }: { page?: number; limit?: number }) => {
+		await dbConnect();
 
-	return products as unknown as Product[];
-});
+		const skip = (page - 1) * limit;
 
-const productService = {
-	getInOrder,
-};
+		const products = await productModel
+			.find({})
+			.sort({ id: 1 })
+			.limit(limit)
+			.skip(skip)
+			.lean();
 
-export default productService;
+		return products as unknown as Product[];
+	}
+);
+
+export default getProducts;

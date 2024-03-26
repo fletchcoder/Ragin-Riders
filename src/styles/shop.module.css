@@ -10,44 +10,49 @@
 
 .container {
 	display: flex;
-	width: 100%;
-}
-
-.left {
-	display: flex;
 	flex-direction: column;
-	width: 30%;
-	height: 100%;
-}
-
-.category {
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	border-bottom: 1px solid black;
-	border-right: 1px solid black;
 	width: 100%;
-	height: 10%;
-	font-size: 2rem;
 }
 
-.arrow {
-	margin-left: 1rem;
-	font-size: 3rem;
-	transform: rotate(90deg);
-}
-
-.category:hover {
-	color: var(--main-bg-color);
-	cursor: pointer;
-}
-
-.right {
+.products {
 	display: grid;
 	row-gap: 3rem;
 	grid-template-columns: repeat(4, 1fr);
-	width: 70%;
-	overflow-y: scroll;
-	scrollbar-color: var(--main-bg-color) white;
-	scrollbar-width: thin;
+	grid-template-rows: repeat(2, 1fr);
+	width: 100%;
+	height: 90%;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 120px;
+	width: 120px;
+	height: 50px;
+}
+
+.active,
+.inactive {
+	width: 50px;
+	height: 100%;
+	font-size: 40px;
+}
+
+.active {
+	background-color: black;
+	border: 1px solid black;
+	color: var(--main-bg-color);
+}
+
+.active:hover {
+	background-color: var(--main-bg-color);
+	color: black;
+	cursor: pointer;
+}
+
+.inactive {
+	background-color: var(--arrow-hover-color);
+	color: var(--offset-color);
+	border: 1px solid var(--arrow-hover-color);
 }
