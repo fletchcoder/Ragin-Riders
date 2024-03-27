@@ -1,0 +1,32 @@
+.container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: white;
+	width: 120px;
+	height: 30px;
+	border-radius: 10px;
+}
+
+.container input {
+	border: none;
+	width: 90px;
+	height: 30px;
+	border-radius: 10px;
+	font-size: 1rem;
+}
+
+.container input:focus {
+	outline: none;
+}
+
+.icon {
+	background-color: white;
+	transform: rotate(90deg);
+}
+
+@media screen and (max-width: 700px) {
+	.container {
+		margin-left: 50px;
+	}
+}

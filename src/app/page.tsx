@@ -130,7 +130,7 @@ export default function Home() {
 								height={200}
 								width={200}
 								alt={`Racing Gloves PNG for Ragin' Riders Home Page`}></Image>
-							<p>Riding Gear</p>
+							<p>Gloves</p>
 						</div>
 						<div className={styles.part}>
 							<Image
@@ -146,7 +146,7 @@ export default function Home() {
 								height={200}
 								width={200}
 								alt={`Motorcycle Helmet Bag PNG for Ragin' Riders Home Page`}></Image>
-							<p>Accessories</p>
+							<p>Bags</p>
 						</div>
 					</div>
 				</section>

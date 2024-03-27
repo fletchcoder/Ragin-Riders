@@ -3,12 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Search from "./search/Search";
 import styles from "@/styles/components/header.module.css";
 
 export default function Header() {
 	const [sidebar, setSideBar] = useState(false);
 
-	function toggleBar(): void {
+	function toggleBar() {
 		setSideBar(!sidebar);
 	}
 	return (
@@ -27,6 +28,7 @@ export default function Header() {
 					</svg>
 					<Link prefetch={false} href={"/"}>
 						<Image
+							className={styles.logo}
 							src={"/icon.ico"}
 							height={50}
 							width={50}
@@ -51,6 +53,7 @@ export default function Header() {
 							</li>
 						</ul>
 					</nav>
+					<Search />
 				</div>
 
 				<div className={styles.right}>
