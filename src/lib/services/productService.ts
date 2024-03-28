@@ -27,9 +27,11 @@ const getProducts = cache(
 					index: "search",
 					text: {
 						query,
-						path: {
-							wildcard: "*",
+						fuzzy: {
+							maxEdits: 2,
+							prefixLength: 3,
 						},
+						path: ["category", "brand", "name"],
 					},
 				},
 			});

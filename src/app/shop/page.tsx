@@ -22,8 +22,10 @@ export default async function Shop({
 		typeof searchParams.page === "string" ? Number(searchParams.page) : 1;
 	const limit =
 		typeof searchParams.limit === "string" ? Number(searchParams.limit) : 8;
+	const search =
+		typeof searchParams.search === "string" ? searchParams.search : undefined;
 
-	const orderedProducts = await getProducts({ page, limit });
+	const orderedProducts = await getProducts({ page, limit, query: search });
 
 	return (
 		<>
