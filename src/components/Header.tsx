@@ -6,7 +6,14 @@ import { useState } from "react";
 import Search from "./search/Search";
 import styles from "@/styles/components/header.module.css";
 
-export default function Header() {
+export default function Header({
+	searchParams,
+}: {
+	searchParams: { [key: string]: string | string[] | string | undefined };
+}) {
+	const search =
+		typeof searchParams.search === "string" ? searchParams.search : undefined;
+
 	const [sidebar, setSideBar] = useState(false);
 
 	function toggleBar() {
@@ -53,7 +60,7 @@ export default function Header() {
 							</li>
 						</ul>
 					</nav>
-					<Search />
+					<Search search={search} />
 				</div>
 
 				<div className={styles.right}>

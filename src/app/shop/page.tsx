@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default async function Shop({
 	searchParams,
 }: {
-	searchParams: { [key: string]: string | string[] | undefined };
+	searchParams: { [key: string]: string | string[] | string | undefined };
 }) {
 	const page =
 		typeof searchParams.page === "string" ? Number(searchParams.page) : 1;
@@ -30,7 +30,7 @@ export default async function Shop({
 	return (
 		<>
 			<main className={styles.main}>
-				<Header />
+				<Header searchParams={searchParams} />
 				<section className={styles.container}>
 					<div className={styles.products}>
 						{orderedProducts.map((product) => (
@@ -38,12 +38,26 @@ export default async function Shop({
 						))}
 					</div>
 					<div className={styles.buttons}>
-						<Link href={`/shop?page=${page > 1 ? page - 1 : 1}`}>
+						<Link
+							href={{
+								pathname: "/shop",
+								query: {
+									...(search ? { search } : {}),
+									page: page > 1 ? page - 1 : 1,
+								},
+							}}>
 							<button className={page > 1 ? styles.active : styles.inactive}>
 								&#60;
 							</button>
 						</Link>
-						<Link href={`/shop?page=${page !== 4 ? page + 1 : 4}`}>
+						<Link
+							href={{
+								pathname: "/shop",
+								query: {
+									...(search ? { search } : {}),
+									page: page < 4 ? page + 1 : 4,
+								},
+							}}>
 							<button className={page !== 4 ? styles.active : styles.inactive}>
 								&#62;
 							</button>

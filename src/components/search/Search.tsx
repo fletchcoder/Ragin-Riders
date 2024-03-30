@@ -6,18 +6,21 @@ import { useDebounce } from "use-debounce";
 import Image from "next/image";
 import styles from "@/styles/components/search/search.module.css";
 
-export default function Search() {
+export default function Search({ search }: { search?: string }) {
 	const router = useRouter();
-	const [text, setText] = useState("");
-	const [query] = useDebounce(text, 500);
+	const [text, setText] = useState(search);
+	const [query] = useDebounce(text, 800);
 
-	useEffect(() => {
-		if (!query) {
-			router.push(`/shop`);
-		} else {
-			router.push(`/shop?search=${query}`);
-		}
-	}, [query]);
+	function handleSubmit() {
+		useEffect(() => {
+			if (!text) {
+				router.push(`/shop`);
+			} else {
+				router.push(`/shop?search=${query}`);
+			}
+		}, [text]);
+	}
+
 	return (
 		<div className={styles.container}>
 			<Image
@@ -27,13 +30,15 @@ export default function Search() {
 				width={20}
 				alt="Search PNG"></Image>
 
-			<input
-				value={text}
-				onChange={(e) => setText(e.target.value)}
-				type="text"
-				placeholder="Search"
-				name="Search"
-			/>
+			<form onSubmit={() => handleSubmit()}>
+				<input
+					value={text}
+					onChange={(e) => setText(e.target.value)}
+					type="text"
+					placeholder="Search"
+					name="search"
+				/>
+			</form>
 		</div>
 	);
 }
