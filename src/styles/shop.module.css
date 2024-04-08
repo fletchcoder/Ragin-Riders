@@ -56,3 +56,34 @@
 	color: var(--offset-color);
 	border: 1px solid var(--arrow-hover-color);
 }
+
+@media (max-width: 700px) {
+	.products {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.container {
+		overflow-y: scroll;
+	}
+	.buttons {
+		margin-top: 280px;
+	}
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+	.products {
+		grid-template-columns: repeat(3, 1fr);
+		height: 100%;
+	}
+	.container {
+		overflow-y: scroll;
+		scrollbar-width: none;
+	}
+	.buttons {
+		margin-top: 400px;
+		width: 140px;
+	}
+	.active,
+	.inactive {
+		width: 65px;
+	}
+}

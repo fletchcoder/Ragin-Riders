@@ -25,8 +25,28 @@
 	transform: rotate(90deg);
 }
 
-@media screen and (max-width: 700px) {
+@media (max-width: 300px) {
 	.container {
-		margin-left: 50px;
+		width: 60px;
+	}
+	.icon {
+		width: 15px;
+		height: 15px;
+		margin-left: 4px;
+	}
+}
+
+@media (min-width: 301px) and (max-width: 700px) {
+	.icon {
+		width: 15px;
+		height: 15px;
+		margin-left: 2px;
+	}
+	.container {
+		width: 80px;
+		margin-left: 10px;
+	}
+	.container input {
+		width: 65px;
 	}
 }

@@ -19,3 +19,17 @@
 .info a:visited {
 	color: var(--offset-color);
 }
+
+@media (max-width: 700px) {
+	.card img {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+	.card img {
+		width: 200px;
+		height: 200px;
+	}
+}
