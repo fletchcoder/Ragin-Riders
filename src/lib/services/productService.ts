@@ -11,8 +11,8 @@ const getProducts = cache(
 		limit = 8,
 		query,
 	}: {
-		page: number;
-		limit: number;
+		page?: number;
+		limit?: number;
 		query?: string;
 	}) => {
 		await dbConnect();

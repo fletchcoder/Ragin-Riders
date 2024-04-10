@@ -117,35 +117,43 @@ export default function Home() {
 					<h1>Our Products</h1>
 					<div className={styles.select}>
 						<div className={styles.part}>
-							<Image
-								src={"/helmet.png"}
-								height={200}
-								width={200}
-								alt={`Motorcycle Helmet PNG for Ragin' Riders Home Page`}></Image>
+							<Link href={"/shop/?search=helmets"}>
+								<Image
+									src={"/helmet.png"}
+									height={200}
+									width={200}
+									alt={`Motorcycle Helmet PNG for Ragin' Riders Home Page`}></Image>
+							</Link>
 							<p>Helmets</p>
 						</div>
 						<div className={styles.part}>
-							<Image
-								src={"/gloves.png"}
-								height={200}
-								width={200}
-								alt={`Racing Gloves PNG for Ragin' Riders Home Page`}></Image>
+							<Link href={"/shop/?search=gloves"}>
+								<Image
+									src={"/gloves.png"}
+									height={200}
+									width={200}
+									alt={`Racing Gloves PNG for Ragin' Riders Home Page`}></Image>
+							</Link>
 							<p>Gloves</p>
 						</div>
 						<div className={styles.part}>
-							<Image
-								src={"/battery.png"}
-								height={200}
-								width={200}
-								alt={`Battery PNG for Ragin' Riders Home Page`}></Image>
+							<Link href={"/shop/?search=parts"}>
+								<Image
+									src={"/battery.png"}
+									height={200}
+									width={200}
+									alt={`Battery PNG for Ragin' Riders Home Page`}></Image>
+							</Link>
 							<p>Parts</p>
 						</div>
 						<div className={styles.part}>
-							<Image
-								src={"/backpack.png"}
-								height={200}
-								width={200}
-								alt={`Motorcycle Helmet Bag PNG for Ragin' Riders Home Page`}></Image>
+							<Link href={"/shop/?search=bags"}>
+								<Image
+									src={"/backpack.png"}
+									height={200}
+									width={200}
+									alt={`Motorcycle Helmet Bag PNG for Ragin' Riders Home Page`}></Image>
+							</Link>
 							<p>Bags</p>
 						</div>
 					</div>

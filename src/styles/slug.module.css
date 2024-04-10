@@ -1,0 +1,21 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: white;
+	min-height: 100vh;
+	width: 100%;
+	font-family: "Copperplate", fantasy;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.holder {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 800px;
+	border: 2px solid black;
+}
