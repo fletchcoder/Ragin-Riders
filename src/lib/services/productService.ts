@@ -5,7 +5,7 @@ import { PipelineStage } from "mongoose";
 
 export const revalidate = 3600;
 
-const getProducts = cache(
+const getAllProducts = cache(
 	async ({
 		page = 1,
 		limit = 8,
@@ -42,4 +42,14 @@ const getProducts = cache(
 	}
 );
 
-export default getProducts;
+const getBySlug = cache(async (slug: string) => {
+	await dbConnect();
+	const product = await productModel.findOne({ slug }).lean();
+	return product as Product;
+});
+
+const productService = {
+	getAllProducts,
+	getBySlug,
+};
+export default productService;

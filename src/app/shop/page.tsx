@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Item from "@/components/products/Item";
 import { Metadata } from "next";
 import Link from "next/link";
-import getProducts from "@/lib/services/productService";
+import productService from "@/lib/services/productService";
 import styles from "@/styles/shop.module.css";
 import React from "react";
 
@@ -25,7 +25,11 @@ export default async function Shop({
 	const search =
 		typeof searchParams.search === "string" ? searchParams.search : undefined;
 
-	const orderedProducts = await getProducts({ page, limit, query: search });
+	const orderedProducts = await productService.getAllProducts({
+		page,
+		limit,
+		query: search,
+	});
 
 	return (
 		<>

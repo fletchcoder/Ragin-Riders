@@ -1,8 +1,27 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import getProducts from "@/lib/services/productService";
+import productService from "@/lib/services/productService";
 import { notFound } from "next/navigation";
 import styles from "@/styles/slug.module.css";
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { slug: string };
+}) {
+	const products = await productService.getAllProducts({});
+	const item = products.find((product) => product.slug === params.slug);
+	if (!item) {
+		return {
+			title: "Product not found",
+		};
+	}
+
+	return {
+		title: `${item.name} by ${item.brand} | Ragin' Riders`,
+		description: `${item.description} - Ragin' Riders`,
+	};
+}
 
 export default async function ItemDetails({
 	params,
@@ -11,14 +30,11 @@ export default async function ItemDetails({
 	params: { slug: string };
 	searchParams: { [key: string]: string | string[] | string | undefined };
 }) {
-	const products = await getProducts({});
-	const featuredProduct = products.find(
-		(product) => product.slug === params.slug
-	);
-	if (!featuredProduct) {
+	const item = await productService.getBySlug(params.slug);
+
+	if (!item) {
 		notFound();
 	}
-
 	return (
 		<main className={styles.main}>
 			<Header searchParams={searchParams} />

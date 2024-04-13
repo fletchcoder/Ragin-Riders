@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useDebounce } from "use-debounce";
 import Image from "next/image";
@@ -14,11 +14,11 @@ export default function Search({ search }: { search?: string }) {
 	function handleSubmit() {
 		useEffect(() => {
 			if (!text) {
-				router.push(`/shop`);
+				router.replace(`/shop`);
 			} else {
-				router.push(`/shop?search=${query}`);
+				router.replace(`/shop?search=${query}`);
 			}
-		}, [text]);
+		}, [query, router]);
 	}
 
 	return (
@@ -30,7 +30,10 @@ export default function Search({ search }: { search?: string }) {
 				width={20}
 				alt="Search PNG"></Image>
 
-			<form onSubmit={() => handleSubmit()}>
+			<form
+				onSubmit={() => {
+					handleSubmit();
+				}}>
 				<input
 					value={text}
 					onChange={(e) => setText(e.target.value)}
