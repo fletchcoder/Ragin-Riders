@@ -8,7 +8,7 @@ export const revalidate = 3600;
 const getAllProducts = cache(
 	async ({
 		page = 1,
-		limit = 8,
+		limit = 25,
 		query,
 	}: {
 		page?: number;
@@ -48,8 +48,16 @@ const getBySlug = cache(async (slug: string) => {
 	return product as Product;
 });
 
+const getByName = cache(async (name: string) => {
+	await dbConnect();
+	const products = await productModel.find({ name }).lean();
+	return products as Product[];
+});
+
 const productService = {
 	getAllProducts,
 	getBySlug,
+	getByName,
 };
+
 export default productService;

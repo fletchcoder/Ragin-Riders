@@ -1,25 +1,18 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useDebounce } from "use-debounce";
+import productService from "@/lib/services/productService";
 import Image from "next/image";
 import styles from "@/styles/components/search/search.module.css";
 
-export default function Search({ search }: { search?: string }) {
-	const router = useRouter();
-	const [text, setText] = useState(search);
-	const [query] = useDebounce(text, 800);
-
-	function handleSubmit() {
-		useEffect(() => {
-			if (!text) {
-				router.replace(`/shop`);
-			} else {
-				router.replace(`/shop?search=${query}`);
-			}
-		}, [query, router]);
-	}
+export default function Search() {
+	const [text, setText] = useState("");
+	const data = useQuery({
+		queryKey: ["search", text],
+		queryFn: () => productService.getByName(text),
+	});
 
 	return (
 		<div className={styles.container}>
@@ -30,18 +23,13 @@ export default function Search({ search }: { search?: string }) {
 				width={20}
 				alt="Search PNG"></Image>
 
-			<form
-				onSubmit={() => {
-					handleSubmit();
-				}}>
-				<input
-					value={text}
-					onChange={(e) => setText(e.target.value)}
-					type="text"
-					placeholder="Search"
-					name="search"
-				/>
-			</form>
+			<input
+				value={text}
+				onChange={(e) => setText(e.target.value)}
+				type="text"
+				placeholder="Search"
+				name="search"
+			/>
 		</div>
 	);
 }

@@ -34,7 +34,7 @@ export default async function Shop({
 	return (
 		<>
 			<main className={styles.main}>
-				<Header searchParams={searchParams} />
+				<Header />
 				<section className={styles.container}>
 					<div className={styles.products}>
 						{orderedProducts.map((product) => (
@@ -62,7 +62,7 @@ export default async function Shop({
 									page: page < 4 ? page + 1 : 4,
 								},
 							}}>
-							<button className={page !== 4 ? styles.active : styles.inactive}>
+							<button className={page < 4 ? styles.active : styles.inactive}>
 								&#62;
 							</button>
 						</Link>

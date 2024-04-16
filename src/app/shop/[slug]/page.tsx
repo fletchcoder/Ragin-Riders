@@ -25,10 +25,8 @@ export async function generateMetadata({
 
 export default async function ItemDetails({
 	params,
-	searchParams,
 }: {
 	params: { slug: string };
-	searchParams: { [key: string]: string | string[] | string | undefined };
 }) {
 	const item = await productService.getBySlug(params.slug);
 
@@ -37,7 +35,7 @@ export default async function ItemDetails({
 	}
 	return (
 		<main className={styles.main}>
-			<Header searchParams={searchParams} />
+			<Header />
 			<section className={styles.container}>
 				<div className={styles.holder}>
 					<div className={styles.left}></div>
