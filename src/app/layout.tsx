@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { inter } from "@/lib/fonts/font";
-import ReactQueryClientProvider from "@/components/ReactQueryClientProvider";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -15,10 +14,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<ReactQueryClientProvider>
-			<html lang="en">
-				<body className={inter.className}>{children}</body>
-			</html>
-		</ReactQueryClientProvider>
+		<html lang="en">
+			<body className={inter.className}>{children}</body>
+		</html>
 	);
 }

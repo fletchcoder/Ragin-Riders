@@ -1,0 +1,30 @@
+.result {
+	min-width: 60%;
+	display: flex;
+	border: 2px solid black;
+	border-top: none;
+}
+
+.result:first-of-type {
+	border-top: 2px solid black;
+}
+
+.info {
+	margin-left: 10px;
+	width: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.info a {
+	color: var(--main-bg-color);
+}
+
+.info a:visited {
+	color: var(--offset-color);
+}
+
+.price {
+	font-size: 1.5rem;
+}

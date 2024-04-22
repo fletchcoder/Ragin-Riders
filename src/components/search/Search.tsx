@@ -1,27 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useDebounce } from "use-debounce";
-import { Product } from "@/lib/types/Product";
-import productService from "@/lib/services/productService";
 import Image from "next/image";
-import SearchResults from "./SearchResults";
 import styles from "@/styles/components/search/search.module.css";
 
-export default function Search() {
-	const [text, setText] = useState("");
-	const [query] = useDebounce(text, 800);
+export default function Search({ search }: { search?: string }) {
+	const [text, setText] = useState(search);
+	const [query] = useDebounce(text, 2500);
+	const router = useRouter();
 
-	const { data, isLoading } = useQuery({
-		queryKey: ["search", query],
-		queryFn: () => {
-			if (query) {
-				return productService.getByName(query);
-			}
-			return [];
-		},
-	});
+	useEffect(() => {
+		if (query) {
+			router.push(`/search?query=${query}`);
+		}
+	}, [query]);
 
 	return (
 		<div>
@@ -31,7 +25,7 @@ export default function Search() {
 					src={"/search.png"}
 					height={20}
 					width={20}
-					alt="Search PNG"></Image>
+					alt=""></Image>
 
 				<input
 					value={text}
@@ -41,7 +35,6 @@ export default function Search() {
 					name="search"
 				/>
 			</div>
-			{/* <SearchResults data={data} isLoading={isLoading} /> */}
 		</div>
 	);
 }

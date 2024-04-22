@@ -16,25 +16,22 @@ export const metadata: Metadata = {
 export default async function Shop({
 	searchParams,
 }: {
-	searchParams: { [key: string]: string | string[] | string | undefined };
+	searchParams: { [key: string]: string | string[] | undefined };
 }) {
-	const page =
+	let page =
 		typeof searchParams.page === "string" ? Number(searchParams.page) : 1;
-	const limit =
+	let limit =
 		typeof searchParams.limit === "string" ? Number(searchParams.limit) : 8;
-	const search =
-		typeof searchParams.search === "string" ? searchParams.search : undefined;
 
 	const orderedProducts = await productService.getAllProducts({
 		page,
 		limit,
-		query: search,
 	});
 
 	return (
 		<>
 			<main className={styles.main}>
-				<Header />
+				<Header searchParams={searchParams} />
 				<section className={styles.container}>
 					<div className={styles.products}>
 						{orderedProducts.map((product) => (
@@ -46,7 +43,6 @@ export default async function Shop({
 							href={{
 								pathname: "/shop",
 								query: {
-									...(search ? { search } : {}),
 									page: page > 1 ? page - 1 : 1,
 								},
 							}}>
@@ -58,7 +54,6 @@ export default async function Shop({
 							href={{
 								pathname: "/shop",
 								query: {
-									...(search ? { search } : {}),
 									page: page < 4 ? page + 1 : 4,
 								},
 							}}>
