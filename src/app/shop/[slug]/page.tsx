@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ImageSet from "@/components/slug/ImageSet";
 import productService from "@/lib/services/productService";
 import { notFound } from "next/navigation";
 import styles from "@/styles/slug.module.css";
@@ -35,13 +36,20 @@ export default async function ItemDetails({
 	if (!item) {
 		notFound();
 	}
+
 	return (
 		<main className={styles.main}>
 			<Header searchParams={searchParams} />
 			<section className={styles.container}>
 				<div className={styles.holder}>
-					<div className={styles.left}></div>
-					<div className={styles.right}></div>
+					<div className={styles.left}>
+						<ImageSet product={item} />
+					</div>
+					<div className={styles.right}>
+						<h1>{item.name}</h1>
+						<h2>by {item.brand}</h2>
+						<p>{item.description}</p>
+					</div>
 				</div>
 			</section>
 			<Footer />

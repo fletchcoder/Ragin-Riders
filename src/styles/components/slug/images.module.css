@@ -1,0 +1,22 @@
+.container {
+	display: flex;
+	height: 100%;
+}
+
+.images {
+	display: flex;
+	flex-direction: column;
+}
+
+.images img {
+	background-color: var(--item-hover-color);
+}
+
+.images img:hover {
+	background-color: white;
+	cursor: pointer;
+}
+
+.big {
+	align-self: center;
+}
