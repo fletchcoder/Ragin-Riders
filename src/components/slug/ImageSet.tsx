@@ -5,7 +5,8 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "@/styles/components/slug/images.module.css";
 
-export default function ImageSet({ product }: { product: Product }) {
+export default function ImageSet({ item }: { item: string }) {
+	const product: Product = JSON.parse(item);
 	const [bigImage, setBigImage] = useState(product.images[0]);
 
 	return (

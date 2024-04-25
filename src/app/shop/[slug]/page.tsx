@@ -37,13 +37,15 @@ export default async function ItemDetails({
 		notFound();
 	}
 
+	const itemString = JSON.stringify(item);
+
 	return (
 		<main className={styles.main}>
 			<Header searchParams={searchParams} />
 			<section className={styles.container}>
 				<div className={styles.holder}>
 					<div className={styles.left}>
-						<ImageSet product={item} />
+						<ImageSet item={itemString} />
 					</div>
 					<div className={styles.right}>
 						<h1>{item.name}</h1>
