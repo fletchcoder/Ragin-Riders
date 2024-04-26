@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ImageSet from "@/components/slug/ImageSet";
+import CartInfo from "@/components/slug/CartInfo";
 import productService from "@/lib/services/productService";
 import { notFound } from "next/navigation";
 import styles from "@/styles/slug.module.css";
@@ -51,6 +52,7 @@ export default async function ItemDetails({
 						<h1>{item.name}</h1>
 						<h2>by {item.brand}</h2>
 						<p>{item.description}</p>
+						<CartInfo item={itemString} />
 					</div>
 				</div>
 			</section>

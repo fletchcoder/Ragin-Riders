@@ -1,0 +1,31 @@
+.container {
+	margin-top: 180px;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.container select,
+.container button {
+	font-family: "Copperplate", fantasy;
+	border-radius: 10px;
+}
+
+.container select {
+	background-color: var(--item-hover-color);
+	font-size: 1rem;
+}
+
+.container button {
+	width: 10ch;
+	font-size: 1.5rem;
+	color: var(--main-bg-color);
+	background-color: black;
+	border: none;
+}
+
+.container button:hover {
+	color: black;
+	background-color: var(--main-bg-color);
+	cursor: pointer;
+}
