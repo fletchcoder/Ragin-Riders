@@ -29,3 +29,15 @@
 	background-color: var(--main-bg-color);
 	cursor: pointer;
 }
+
+@media (max-width: 500px) {
+	.container {
+		margin-block: 1.25rem;
+	}
+}
+
+@media (min-width: 501px) and (max-width: 700px) {
+	.container {
+		margin-block: 1rem;
+	}
+}

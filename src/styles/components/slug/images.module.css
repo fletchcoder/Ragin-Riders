@@ -20,3 +20,24 @@
 .big {
 	align-self: center;
 }
+
+@media (max-width: 499px) {
+	.big img {
+		height: 270px;
+		width: 270px;
+	}
+}
+
+@media (min-width: 500px) and (max-width: 699px) {
+	.big img {
+		height: 300px;
+		width: 300px;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 800px) {
+	.big img {
+		height: 350px;
+		width: 350px;
+	}
+}

@@ -50,7 +50,9 @@ export default async function ItemDetails({
 					</div>
 					<div className={styles.right}>
 						<h1>{item.name}</h1>
-						<h2>by {item.brand}</h2>
+						<h2>
+							by {item.brand} - ${item.price}
+						</h2>
 						<p>{item.description}</p>
 						<CartInfo item={itemString} />
 					</div>

@@ -8,7 +8,7 @@ export default function CartInfo({ item }: { item: string }) {
 
 	return (
 		<div className={styles.container}>
-			<select name="amount" id="amount">
+			<select name="amount" title="Amount">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -21,7 +21,7 @@ export default function CartInfo({ item }: { item: string }) {
 				<option value="10">10</option>
 			</select>
 			{product.colors && (
-				<select name="color">
+				<select name="color" title="Color">
 					{product.colors.map((color, index) => (
 						<option key={index} value={color}>
 							{color}
@@ -30,7 +30,7 @@ export default function CartInfo({ item }: { item: string }) {
 				</select>
 			)}
 			{product.sizes && (
-				<select name="size">
+				<select name="size" title="Size">
 					{product.sizes.map((size, index) => (
 						<option key={index} value={size}>
 							{size}

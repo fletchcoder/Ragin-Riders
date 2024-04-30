@@ -170,7 +170,7 @@
 	}
 	.right {
 		font-size: 18px;
-		justify-content: flex-end;
+		justify-content: center;
 	}
 	.right svg {
 		margin-right: 10px;
