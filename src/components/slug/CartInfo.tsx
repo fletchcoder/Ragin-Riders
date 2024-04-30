@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from "@/lib/types/Product";
+import type { Product } from "@/lib/types/Product";
 import styles from "@/styles/components/slug/cartinfo.module.css";
 
 export default function CartInfo({ item }: { item: string }) {
@@ -22,15 +22,19 @@ export default function CartInfo({ item }: { item: string }) {
 			</select>
 			{product.colors && (
 				<select name="color">
-					{product.colors.map((color) => (
-						<option value={color}>{color}</option>
+					{product.colors.map((color, index) => (
+						<option key={index} value={color}>
+							{color}
+						</option>
 					))}
 				</select>
 			)}
 			{product.sizes && (
 				<select name="size">
-					{product.sizes.map((size) => (
-						<option value={size}>{size}</option>
+					{product.sizes.map((size, index) => (
+						<option key={index} value={size}>
+							{size}
+						</option>
 					))}
 				</select>
 			)}
