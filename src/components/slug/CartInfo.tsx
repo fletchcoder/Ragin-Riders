@@ -4,18 +4,21 @@ import type { Product } from "@/lib/types/Product";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import styles from "@/styles/components/slug/cartinfo.module.css";
+import { addToCart } from "@/redux/cart.slice";
 
 export default function CartInfo({ item }: { item: string }) {
 	const product: Product = JSON.parse(item);
 	const dispatch = useDispatch();
 	const [itemValues, setItemValues] = useState({
-		item: product,
+		product: product,
 		amount: 1,
 		color: "",
 		size: "",
 	});
 
-	function addItems() {}
+	function addItems() {
+		dispatch(addToCart(itemValues));
+	}
 
 	return (
 		<div className={styles.container}>
