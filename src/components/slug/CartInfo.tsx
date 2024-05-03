@@ -69,7 +69,9 @@ export default function CartInfo({ item }: { item: string }) {
 					))}
 				</select>
 			)}
-			<button type="button">Add to Cart</button>
+			<button type="button" onClick={() => addItems()}>
+				Add to Cart
+			</button>
 		</div>
 	);
 }

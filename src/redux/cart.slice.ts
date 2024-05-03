@@ -1,4 +1,4 @@
-import { Product } from "@/lib/types/Product";
+import type { Product } from "@/lib/types/Product";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface CartItem {
@@ -43,9 +43,9 @@ const cartSlice = createSlice({
 					item.size === action.payload.size
 			);
 
-			if (fullItem) {
-				state.items.filter((item) => item !== fullItem);
-			}
+			const removeItem = state.items.filter((item) => item !== fullItem);
+
+			state.items = removeItem;
 		},
 
 		clearCart: (state) => {
