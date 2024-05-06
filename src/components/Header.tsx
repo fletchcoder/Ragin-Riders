@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useAppSelector } from "@/redux/store";
 import Search from "./search/Search";
 import styles from "@/styles/components/header.module.css";
 
@@ -15,9 +16,12 @@ export default function Header({
 		typeof searchParams.search === "string" ? searchParams.search : undefined;
 	const [sidebar, setSideBar] = useState(false);
 
+	const cart = useAppSelector((state) => state.cart);
+
 	function toggleBar() {
 		setSideBar(!sidebar);
 	}
+
 	return (
 		<>
 			<div className={styles.header}>
