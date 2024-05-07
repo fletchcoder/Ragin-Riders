@@ -6,9 +6,9 @@ import { useDebounce } from "use-debounce";
 import Image from "next/image";
 import styles from "@/styles/components/search/search.module.css";
 
-export default function Search({ search }: { search?: string }) {
+export default function Search({ search = "" }: { search?: string }) {
 	const [text, setText] = useState(search);
-	const [query] = useDebounce(text, 2500);
+	const [query] = useDebounce(text, 600);
 	const router = useRouter();
 
 	useEffect(() => {
