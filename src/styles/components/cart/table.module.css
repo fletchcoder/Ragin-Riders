@@ -1,0 +1,31 @@
+.table {
+	max-width: 900px;
+}
+
+.table th,
+.table td {
+	width: 100px;
+	text-align: center;
+}
+
+.table th {
+	background-color: black;
+	color: white;
+	font-weight: 200;
+}
+
+.table button {
+	background-color: black;
+	color: var(--main-bg-color);
+	cursor: pointer;
+	border-radius: 10px;
+	border: none;
+	height: 20px;
+	min-width: fit-content;
+	padding-inline: 10px;
+}
+
+.table button:hover {
+	background-color: var(--main-bg-color);
+	color: white;
+}

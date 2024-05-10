@@ -12,8 +12,8 @@ export default function CartInfo({ item }: { item: string }) {
 	const [itemValues, setItemValues] = useState({
 		product: product,
 		amount: 1,
-		color: "",
-		size: "",
+		color: "N/A",
+		size: "N/A",
 	});
 
 	function addItems() {

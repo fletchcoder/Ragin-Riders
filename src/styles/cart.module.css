@@ -1,0 +1,13 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	font-family: "Copperplate", fantasy;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
