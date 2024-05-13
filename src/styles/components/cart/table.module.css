@@ -29,3 +29,18 @@
 	background-color: var(--main-bg-color);
 	color: white;
 }
+
+@media (max-width: 500px) {
+	.table th,
+	.table td,
+	.table button {
+		font-size: 0.75rem;
+	}
+
+	.table button {
+		padding-inline: 5px;
+	}
+	.toggle {
+		display: none;
+	}
+}

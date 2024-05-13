@@ -46,7 +46,7 @@ export default function CartInfo({ item }: { item: string }) {
 					onChange={(e) =>
 						setItemValues({ ...itemValues, color: e.target.value })
 					}>
-					<option></option>
+					<option>Color</option>
 					{product.colors.map((color, index) => (
 						<option key={index} value={color}>
 							{color}
@@ -61,7 +61,7 @@ export default function CartInfo({ item }: { item: string }) {
 					onChange={(e) =>
 						setItemValues({ ...itemValues, size: e.target.value })
 					}>
-					<option></option>
+					<option>Size</option>
 					{product.sizes.map((size, index) => (
 						<option key={index} value={size}>
 							{size}

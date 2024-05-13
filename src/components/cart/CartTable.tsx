@@ -21,8 +21,8 @@ export default function CartTable() {
 				<tr>
 					<th>Product</th>
 					<th>Name</th>
-					<th>Brand</th>
-					<th>Color</th>
+					<th className={styles.toggle}>Brand</th>
+					<th className={styles.toggle}>Color</th>
 					<th>Size</th>
 					<th>Amount</th>
 					<th>Price</th>
@@ -37,8 +37,8 @@ export default function CartTable() {
 						<tr>
 							<td>N/A</td>
 							<td>No Items</td>
-							<td>N/A</td>
-							<td>N/A</td>
+							<td className={styles.toggle}>N/A</td>
+							<td className={styles.toggle}>N/A</td>
 							<td>N/A</td>
 							<td>0</td>
 							<td>N/A</td>
@@ -50,8 +50,8 @@ export default function CartTable() {
 						<tr>
 							<td></td>
 							<td></td>
-							<td></td>
-							<td></td>
+							<td className={styles.toggle}></td>
+							<td className={styles.toggle}></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -78,8 +78,8 @@ export default function CartTable() {
 												alt={`${item.product.name}`}></Image>
 										</td>
 										<td>{item.product.name}</td>
-										<td>{item.product.brand}</td>
-										<td>{item.color}</td>
+										<td className={styles.toggle}>{item.product.brand}</td>
+										<td className={styles.toggle}>{item.color}</td>
 										<td>{item.size}</td>
 										<td>{item.amount}</td>
 										<td>${Math.round(item.product.price * 100) / 100}</td>
@@ -105,8 +105,8 @@ export default function CartTable() {
 												alt={`${item.product.name}`}></Image>
 										</td>
 										<td>{item.product.name}</td>
-										<td>{item.product.brand}</td>
-										<td>{item.color}</td>
+										<td className={styles.toggle}>{item.product.brand}</td>
+										<td className={styles.toggle}>{item.color}</td>
 										<td>{item.size}</td>
 										<td>{item.amount}</td>
 										<td>${Math.round(item.product.price * 100) / 100}</td>
@@ -128,8 +128,8 @@ export default function CartTable() {
 						<tr>
 							<td></td>
 							<td></td>
-							<td></td>
-							<td></td>
+							<td className={styles.toggle}></td>
+							<td className={styles.toggle}></td>
 							<td></td>
 							<td></td>
 							<td>Total</td>
