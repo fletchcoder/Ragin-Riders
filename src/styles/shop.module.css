@@ -65,7 +65,7 @@
 		overflow-y: scroll;
 	}
 	.buttons {
-		margin-top: 280px;
+		margin-top: 150px;
 	}
 }
 
@@ -79,7 +79,7 @@
 		scrollbar-width: none;
 	}
 	.buttons {
-		margin-top: 400px;
+		margin-top: 200px;
 		width: 140px;
 	}
 	.active,

@@ -106,6 +106,13 @@
 	.icon {
 		width: 35px;
 		height: 35px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2px;
+	}
+	.icon:last-child {
+		padding-bottom: 3px;
 	}
 }
 

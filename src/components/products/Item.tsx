@@ -10,6 +10,7 @@ export default function Item({ product }: { product: Product }) {
 				<Image
 					height={250}
 					width={250}
+					priority
 					alt={`${product.name} | Ragin' Riders`}
 					src={product.images[0]}></Image>
 			</Link>
