@@ -89,7 +89,9 @@ export default function Header({
 							)}
 						</li>
 						<li>
-							<p>Sign In</p>
+							<Link href={"/login"}>
+								<p>Sign In</p>
+							</Link>
 						</li>
 					</ul>
 				</div>

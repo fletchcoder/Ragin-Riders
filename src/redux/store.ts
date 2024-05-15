@@ -12,6 +12,7 @@ import {
 } from "redux-persist";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { cartReducer } from "./cart.slice";
+import { authReducer } from "./auth.slice";
 
 function createNoopStorage() {
 	return {
@@ -37,6 +38,7 @@ const persistConfig = {
 
 const reducer = combineReducers({
 	cart: cartReducer,
+	auth: authReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
