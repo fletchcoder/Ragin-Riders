@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
-import styles from "@/styles/components/signin/signin.module.css";
+import styles from "@/styles/components/auth/auth.module.css";
 
 export default function SignInForm() {
 	const dispatch = useAppDispatch();
@@ -17,6 +17,7 @@ export default function SignInForm() {
 
 	return (
 		<div className={styles.container}>
+			<h2>Log In To Your Account</h2>
 			<form onSubmit={handleSubmit}>
 				<input
 					type="text"
@@ -26,7 +27,7 @@ export default function SignInForm() {
 					onChange={(e) => setUsername(e.target.value)}
 				/>
 				<input
-					type="text"
+					type="email"
 					placeholder="Email"
 					name="Email"
 					value={email}
@@ -39,8 +40,10 @@ export default function SignInForm() {
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
 				/>
+				<button type="submit">Log In</button>
 			</form>
 			<Link href={"/signup"}>Don't have an account? Sign up here</Link>
+			<Link href={"/shop"}>&larr; Back to Shop</Link>
 		</div>
 	);
 }
