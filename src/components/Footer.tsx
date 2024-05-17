@@ -20,8 +20,8 @@ export default function Footer() {
 								</Link>
 							</li>
 							<li>
-								<Link prefetch={false} href={"/join"}>
-									Join Our Team
+								<Link prefetch={false} href={"/blogs"}>
+									Read Our Blogs
 								</Link>
 							</li>
 						</ul>

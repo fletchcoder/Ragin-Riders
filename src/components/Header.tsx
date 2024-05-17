@@ -17,6 +17,7 @@ export default function Header({
 	const [sidebar, setSideBar] = useState(false);
 
 	const cart = useAppSelector((state) => state.cart);
+	const auth = useAppSelector((state) => state.auth);
 
 	function toggleBar() {
 		setSideBar(!sidebar);
@@ -63,8 +64,8 @@ export default function Header({
 								</Link>
 							</li>
 							<li>
-								<Link prefetch={false} href={"/join"}>
-									Join Us
+								<Link prefetch={false} href={"/blogs"}>
+									Our Blogs
 								</Link>
 							</li>
 						</ul>
@@ -121,8 +122,8 @@ export default function Header({
 							</Link>
 						</li>
 						<li>
-							<Link prefetch={false} href={"/join"}>
-								Join Us
+							<Link prefetch={false} href={"/blogs"}>
+								Our Blogs
 							</Link>
 						</li>
 					</ul>

@@ -4,28 +4,27 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
 import styles from "@/styles/components/auth/auth.module.css";
+import { login } from "@/redux/auth.slice";
+import { useRouter } from "next/navigation";
 
 export default function SignInForm() {
+	const router = useRouter();
 	const dispatch = useAppDispatch();
-	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
 	function handleSubmit(e: FormEvent) {
 		e.preventDefault();
+		dispatch(login({ email, password })).then((action) => {
+			localStorage.setItem("accessToken", action.payload.token);
+			router.push("/shop");
+		});
 	}
 
 	return (
 		<div className={styles.container}>
 			<h2>Log In To Your Account</h2>
 			<form onSubmit={handleSubmit}>
-				<input
-					type="text"
-					placeholder="Username"
-					name="Username"
-					value={username}
-					onChange={(e) => setUsername(e.target.value)}
-				/>
 				<input
 					type="email"
 					placeholder="Email"

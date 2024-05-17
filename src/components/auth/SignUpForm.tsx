@@ -3,9 +3,12 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
+import { register } from "@/redux/auth.slice";
 import styles from "@/styles/components/auth/auth.module.css";
+import { useRouter } from "next/navigation";
 
 export default function SignUpForm() {
+	const router = useRouter();
 	const dispatch = useAppDispatch();
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
@@ -13,6 +16,12 @@ export default function SignUpForm() {
 
 	function handleSubmit(e: FormEvent) {
 		e.preventDefault();
+		dispatch(register({ username, email, password }))
+			.then((action) => {
+				localStorage.setItem("accessToken", action.payload.token);
+				router.push("/shop");
+			})
+			.catch();
 	}
 
 	return (

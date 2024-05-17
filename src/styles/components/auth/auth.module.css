@@ -40,6 +40,10 @@
 	border: none;
 }
 
+.container input:focus {
+	outline-color: var(--main-bg-color);
+}
+
 .container button {
 	background-color: var(--main-bg-color);
 	border: none;
