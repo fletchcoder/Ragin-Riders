@@ -3,6 +3,7 @@
 	margin: 0;
 	--main-bg-color: rgb(243, 133, 6);
 	--offset-color: rgba(187, 100, 0, 0.808);
+	--success-color: rgba(6, 170, 14, 0.808);
 	--hover-color: rgb(235, 24, 17);
 	--header-hover-color: rgb(122, 121, 119);
 	--item-hover-color: rgb(196, 195, 194);

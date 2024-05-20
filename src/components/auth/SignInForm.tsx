@@ -12,37 +12,44 @@ export default function SignInForm() {
 	const dispatch = useAppDispatch();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [error, setError] = useState(false);
 
 	function handleSubmit(e: FormEvent) {
 		e.preventDefault();
-		dispatch(login({ email, password })).then((action) => {
-			localStorage.setItem("accessToken", action.payload.token);
-			router.push("/shop");
-		});
+		dispatch(login({ email, password }))
+			.then(() => {
+				router.push("/shop");
+			})
+			.catch(() => {
+				return setError(true);
+			});
 	}
 
 	return (
-		<div className={styles.container}>
-			<h2>Log In To Your Account</h2>
-			<form onSubmit={handleSubmit}>
-				<input
-					type="email"
-					placeholder="Email"
-					name="Email"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-				/>
-				<input
-					type="password"
-					placeholder="Password"
-					name="Password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-				<button type="submit">Log In</button>
-			</form>
-			<Link href={"/signup"}>Don't have an account? Sign up here</Link>
-			<Link href={"/shop"}>&larr; Back to Shop</Link>
-		</div>
+		<>
+			<div className={styles.container}>
+				<h2>Log In To Your Account</h2>
+				<form onSubmit={handleSubmit}>
+					<input
+						type="email"
+						placeholder="Email"
+						name="Email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					<input
+						type="password"
+						placeholder="Password"
+						name="Password"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+					<button type="submit">Log In</button>
+				</form>
+				<Link href={"/signup"}>Don't have an account? Sign up here</Link>
+				<Link href={"/shop"}>&larr; Back to Shop</Link>
+			</div>
+			{error && <p className={styles.error}>Email or password incorrect.</p>}
+		</>
 	);
 }

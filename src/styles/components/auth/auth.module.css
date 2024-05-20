@@ -57,3 +57,9 @@
 .container button:hover {
 	background-color: var(--offset-color);
 }
+
+.error {
+	color: var(--hover-color);
+	text-align: center;
+	font-size: 1.3rem;
+}

@@ -25,7 +25,11 @@ const initialState: UserState = {
 const authSlice = createSlice({
 	name: "auth",
 	initialState,
-	reducers: {},
+	reducers: {
+		signOut: (state) => {
+			state.currentUser = undefined;
+		},
+	},
 	extraReducers: (builder) => {
 		builder
 			.addCase(register.pending, (state) => {
@@ -53,33 +57,27 @@ const authSlice = createSlice({
 
 export const register = createAsyncThunk(
 	"auth/register",
-	async (userData: UserSignUp, thunkAPI) => {
-		try {
-			const response = await axios.post("https://api.realworld.io/api/users", {
-				user: userData,
-			});
-			return response.data.user;
-		} catch (err) {
-			return thunkAPI.rejectWithValue(err);
-		}
+	async (userData: UserSignUp) => {
+		const response = await axios.post("https://api.realworld.io/api/users", {
+			user: userData,
+		});
+		return response.data.user;
 	}
 );
 
 export const login = createAsyncThunk(
 	"auth/login",
-	async (userData: UserLogin, thunkAPI) => {
-		try {
-			const response = await axios.post(
-				"https://api.realworld.io/api/users/login",
-				{
-					user: userData,
-				}
-			);
-			return response.data.user;
-		} catch (err) {
-			return thunkAPI.rejectWithValue(err);
-		}
+	async (userData: UserLogin) => {
+		const response = await axios.post(
+			"https://api.realworld.io/api/users/login",
+			{
+				user: userData,
+			}
+		);
+		return response.data.user;
 	}
 );
+
+export const { signOut } = authSlice.actions;
 
 export const authReducer = authSlice.reducer;

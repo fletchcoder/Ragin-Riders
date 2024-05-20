@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useAppSelector } from "@/redux/store";
+import { useRouter } from "next/navigation";
+import { useAppSelector, useAppDispatch } from "@/redux/store";
 import Search from "./search/Search";
 import styles from "@/styles/components/header.module.css";
+import { signOut } from "@/redux/auth.slice";
 
 export default function Header({
 	searchParams,
@@ -14,8 +16,10 @@ export default function Header({
 }) {
 	const search =
 		typeof searchParams.search === "string" ? searchParams.search : undefined;
-	const [sidebar, setSideBar] = useState(false);
 
+	const [sidebar, setSideBar] = useState(false);
+	const dispatch = useAppDispatch();
+	const router = useRouter();
 	const cart = useAppSelector((state) => state.cart);
 	const auth = useAppSelector((state) => state.auth);
 
@@ -27,6 +31,10 @@ export default function Header({
 		let total = 0;
 		cart.items.forEach((item) => (total += item.amount));
 		return total;
+	}
+
+	function signOutUser() {
+		dispatch(signOut());
 	}
 
 	return (
@@ -90,9 +98,15 @@ export default function Header({
 							)}
 						</li>
 						<li>
-							<Link href={"/login"}>
-								<p>Sign In</p>
-							</Link>
+							{auth.currentUser ? (
+								<p className={styles.out} onClick={() => signOutUser()}>
+									Sign Out
+								</p>
+							) : (
+								<Link href={"/login"}>
+									<p>Sign In</p>
+								</Link>
+							)}
 						</li>
 					</ul>
 				</div>

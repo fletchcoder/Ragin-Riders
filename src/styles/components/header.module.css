@@ -78,6 +78,10 @@
 	height: 40px;
 }
 
+.out {
+	cursor: pointer;
+}
+
 .sidebar {
 	height: 100vh;
 	width: 250px;
