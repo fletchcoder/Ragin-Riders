@@ -3,9 +3,9 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/store";
-import styles from "@/styles/components/auth/auth.module.css";
 import { login } from "@/redux/auth.slice";
 import { useRouter } from "next/navigation";
+import styles from "@/styles/components/auth/auth.module.css";
 
 export default function SignInForm() {
 	const router = useRouter();

@@ -18,6 +18,7 @@ export default function Header({
 		typeof searchParams.search === "string" ? searchParams.search : undefined;
 
 	const [sidebar, setSideBar] = useState(false);
+	const [info, displayInfo] = useState(false);
 	const dispatch = useAppDispatch();
 	const router = useRouter();
 	const cart = useAppSelector((state) => state.cart);
@@ -25,6 +26,10 @@ export default function Header({
 
 	function toggleBar() {
 		setSideBar(!sidebar);
+	}
+
+	function toggleInfo() {
+		displayInfo(!info);
 	}
 
 	function getTotalQuantity() {
@@ -35,6 +40,7 @@ export default function Header({
 
 	function signOutUser() {
 		dispatch(signOut());
+		router.push("/");
 	}
 
 	return (
@@ -99,9 +105,30 @@ export default function Header({
 						</li>
 						<li>
 							{auth.currentUser ? (
-								<p className={styles.out} onClick={() => signOutUser()}>
-									Sign Out
-								</p>
+								<ul className={info ? styles.info : styles.account}>
+									<li onClick={() => toggleInfo()}>
+										<svg
+											version="1.1"
+											id="Layer_1"
+											xmlns="http://www.w3.org/2000/svg"
+											x="0px"
+											y="0px"
+											viewBox="131 -131 512 512">
+											<g id="XMLID_5_">
+												<path
+													id="XMLID_10_"
+													d="M387-131c-141.3,0-256,114.7-256,256s114.7,256,256,256s256-114.7,256-256S528.3-131,387-131z M387-54.3
+								   c42.8,0,76.7,33.9,76.7,76.7S429.8,99.1,387,99.1s-76.7-33.9-76.7-76.7S344.2-54.3,387-54.3z M387,309.1
+								   c-63.8,0-120.3-33.1-153.4-82.4c0.8-50.9,102.6-79.1,153.4-79.1s152.6,28.3,153.4,79.1C507.3,276,450.8,309.1,387,309.1z"
+												/>
+											</g>
+										</svg>
+									</li>
+									<li>
+										<Link href={"/account"}>Account</Link>
+									</li>
+									<li onClick={() => signOutUser()}>Sign Out</li>
+								</ul>
 							) : (
 								<Link href={"/login"}>
 									<p>Sign In</p>
