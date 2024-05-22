@@ -18,6 +18,7 @@ export default function SignUpForm() {
 	function handleSubmit(e: FormEvent) {
 		e.preventDefault();
 		dispatch(register({ username, email, password }))
+			.unwrap()
 			.then(() => {
 				router.push("/shop");
 			})

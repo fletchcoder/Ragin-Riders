@@ -104,7 +104,7 @@ export default function Header({
 							)}
 						</li>
 						<li>
-							{auth.currentUser ? (
+							{auth.currentUser.username !== "" ? (
 								<ul className={info ? styles.info : styles.account}>
 									<li onClick={() => toggleInfo()}>
 										<svg

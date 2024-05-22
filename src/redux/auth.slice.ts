@@ -1,11 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-interface UserState {
-	currentUser: undefined;
-	isLoading: boolean;
-}
-
 type UserSignUp = {
 	email: string;
 	username: string;
@@ -17,8 +12,27 @@ type UserLogin = {
 	password: string;
 };
 
+type LoggedInUser = {
+	email: string;
+	username: string;
+	bio: null;
+	token: string;
+	image: string;
+};
+
+interface UserState {
+	currentUser: LoggedInUser;
+	isLoading: boolean;
+}
+
 const initialState: UserState = {
-	currentUser: undefined,
+	currentUser: {
+		email: "",
+		username: "",
+		bio: null,
+		token: "",
+		image: "",
+	},
 	isLoading: false,
 };
 
@@ -27,7 +41,13 @@ const authSlice = createSlice({
 	initialState,
 	reducers: {
 		signOut: (state) => {
-			state.currentUser = undefined;
+			state.currentUser = {
+				email: "",
+				username: "",
+				bio: null,
+				token: "",
+				image: "",
+			};
 		},
 	},
 	extraReducers: (builder) => {
@@ -57,24 +77,32 @@ const authSlice = createSlice({
 
 export const register = createAsyncThunk(
 	"auth/register",
-	async (userData: UserSignUp) => {
-		const response = await axios.post("https://api.realworld.io/api/users", {
-			user: userData,
-		});
-		return response.data.user;
+	async (userData: UserSignUp, { rejectWithValue }) => {
+		try {
+			const response = await axios.post("https://api.realworld.io/api/users", {
+				user: userData,
+			});
+			return response.data.user;
+		} catch (err) {
+			return rejectWithValue(err);
+		}
 	}
 );
 
 export const login = createAsyncThunk(
 	"auth/login",
-	async (userData: UserLogin) => {
-		const response = await axios.post(
-			"https://api.realworld.io/api/users/login",
-			{
-				user: userData,
-			}
-		);
-		return response.data.user;
+	async (userData: UserLogin, { rejectWithValue }) => {
+		try {
+			const response = await axios.post(
+				"https://api.realworld.io/api/users/login",
+				{
+					user: userData,
+				}
+			);
+			return response.data.user;
+		} catch (err) {
+			return rejectWithValue(err);
+		}
 	}
 );
 

@@ -34,7 +34,7 @@ export default function HomeNav() {
 						</li>
 						<li>
 							<Link prefetch={false} href={"/join"}>
-								Join Us
+								Our Blogs
 							</Link>
 						</li>
 					</ul>
@@ -66,7 +66,7 @@ export default function HomeNav() {
 						</li>
 						<li className={styles.hideOnMobile}>
 							<Link prefetch={false} href={"/join"}>
-								Join Us
+								Our Blogs
 							</Link>
 						</li>
 						<li className={styles.menu}>

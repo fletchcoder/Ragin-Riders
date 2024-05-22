@@ -17,6 +17,7 @@ export default function SignInForm() {
 	function handleSubmit(e: FormEvent) {
 		e.preventDefault();
 		dispatch(login({ email, password }))
+			.unwrap()
 			.then(() => {
 				router.push("/shop");
 			})

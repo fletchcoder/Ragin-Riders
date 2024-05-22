@@ -90,7 +90,7 @@
 }
 
 .info {
-	margin-top: 50px;
+	margin-top: 100px;
 }
 
 .account li,
@@ -115,7 +115,8 @@
 .info li:nth-child(3) {
 	display: inline;
 	text-align: center;
-	padding-inline: 10px;
+	margin-top: 20px;
+	padding-inline: 2px;
 }
 
 .info li:nth-child(3):hover {
@@ -217,6 +218,11 @@
 		width: 20px;
 		height: 20px;
 	}
+	.info li:nth-child(2),
+	.info li:nth-child(3) {
+		padding-inline: 5px;
+		font-size: 1.5rem;
+	}
 	.sidebar {
 		width: 100%;
 	}
@@ -251,6 +257,11 @@
 		margin-left: -10px;
 		width: 23px;
 		height: 23px;
+	}
+	.info li:nth-child(2),
+	.info li:nth-child(3) {
+		padding-inline: 5px;
+		font-size: 1.5rem;
 	}
 	.sidebar nav ul {
 		font-size: 30px;
