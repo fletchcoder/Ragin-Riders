@@ -90,11 +90,12 @@
 }
 
 .info {
-	margin-top: 100px;
+	margin-top: 90px;
 }
 
 .account li,
 .info li {
+	cursor: pointer;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -120,7 +121,6 @@
 }
 
 .info li:nth-child(3):hover {
-	cursor: pointer;
 	text-decoration: underline;
 }
 

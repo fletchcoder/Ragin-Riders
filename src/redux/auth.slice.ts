@@ -1,14 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-type UserSignUp = {
+type UserData = {
 	email: string;
-	username: string;
-	password: string;
-};
-
-type UserLogin = {
-	email: string;
+	username?: string;
 	password: string;
 };
 
@@ -77,7 +72,7 @@ const authSlice = createSlice({
 
 export const register = createAsyncThunk(
 	"auth/register",
-	async (userData: UserSignUp, { rejectWithValue }) => {
+	async (userData: UserData, { rejectWithValue }) => {
 		try {
 			const response = await axios.post("https://api.realworld.io/api/users", {
 				user: userData,
@@ -91,7 +86,7 @@ export const register = createAsyncThunk(
 
 export const login = createAsyncThunk(
 	"auth/login",
-	async (userData: UserLogin, { rejectWithValue }) => {
+	async (userData: UserData, { rejectWithValue }) => {
 		try {
 			const response = await axios.post(
 				"https://api.realworld.io/api/users/login",

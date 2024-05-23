@@ -1,0 +1,48 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	min-height: 500px;
+	padding: 30px;
+	align-items: center;
+	background-color: black;
+	border-radius: 10px;
+}
+
+.form label,
+.form h2 {
+	color: var(--main-bg-color);
+}
+
+.form h2 {
+	font-size: 2rem;
+}
+
+.form label {
+	margin-top: 50px;
+	font-size: 1.5rem;
+}
+
+.form input,
+.form textarea,
+.form button {
+	font-size: 1.25rem;
+	font-family: "Copperplate", fantasy;
+}
+
+.form textarea {
+	resize: none;
+}
+
+.form button {
+	background-color: var(--main-bg-color);
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-top: 10px;
+	padding-inline: 5px;
+}
+
+.form button:hover {
+	color: white;
+}
