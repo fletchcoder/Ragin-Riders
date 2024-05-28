@@ -29,14 +29,8 @@ export default function Footer() {
 					<div className={styles.right}>
 						<h2>Contact Info</h2>
 						<ul>
-							<li>
-								<a href="tel:9165674434">(916)-567-4434</a>
-							</li>
-							<li>
-								<a href="mailto:raginriderssac@gmail.com">
-									raginriderssac@gmail.com
-								</a>
-							</li>
+							<li>(916)-567-4434</li>
+							<li>raginriderssac@gmail.com</li>
 							<li>1618 Bruceville Rd</li>
 							<li>Sacramento, CA</li>
 						</ul>
