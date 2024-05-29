@@ -5,10 +5,3 @@
 	width: 100%;
 	font-family: "Copperplate", fantasy;
 }
-
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	overflow: hidden;
-}

@@ -40,6 +40,7 @@ export default function Header({
 
 	function signOutUser() {
 		dispatch(signOut());
+		router.push("/shop");
 	}
 
 	return (

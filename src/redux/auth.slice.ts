@@ -22,8 +22,8 @@ interface UserState {
 
 const initialState: UserState = {
 	currentUser: {
-		email: "",
-		username: "",
+		email: "N/A",
+		username: "N/A",
 		bio: null,
 		token: "",
 		image: "",
@@ -37,8 +37,8 @@ const authSlice = createSlice({
 	reducers: {
 		signOut: (state) => {
 			state.currentUser = {
-				email: "",
-				username: "",
+				email: "N/A",
+				username: "N/A",
 				bio: null,
 				token: "",
 				image: "",
