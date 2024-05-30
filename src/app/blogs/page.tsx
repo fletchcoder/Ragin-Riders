@@ -20,8 +20,8 @@ export default async function Blogs({
 		<main className={styles.main}>
 			<Header searchParams={searchParams} />
 			<section className={styles.container}>
-				{posts.map((post) => (
-					<Blog post={post} />
+				{posts.map((post, index) => (
+					<Blog post={post} key={index} />
 				))}
 			</section>
 			<Footer />

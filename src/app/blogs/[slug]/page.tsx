@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import blogService from "@/lib/services/blogService";
 import { notFound } from "next/navigation";
 import styles from "@/styles/blogpage.module.css";
@@ -38,7 +39,20 @@ export default async function BlogPost({
 	return (
 		<main className={styles.main}>
 			<Header searchParams={searchParams} />
-			<section></section>
+			<section className={styles.container}>
+				<h1>{post.title}</h1>
+				<Image
+					src={"/battery.png"}
+					height={400}
+					width={400}
+					alt={`${post.title} Blog Image`}></Image>
+				<div className={styles.author}>
+					<h2>By {post.author}</h2>
+					<h2>{post.date}</h2>
+				</div>
+				<p>{post.para1}</p>
+				<p>{post.para2}</p>
+			</section>
 			<Footer />
 		</main>
 	);

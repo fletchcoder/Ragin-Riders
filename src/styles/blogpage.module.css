@@ -5,3 +5,42 @@
 	width: 100%;
 	font-family: "Copperplate", fantasy;
 }
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container h1,
+.container h2 {
+	font-weight: 200;
+}
+
+.container h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+.container img {
+	max-width: 100%;
+	height: auto;
+}
+
+.author {
+	display: flex;
+	gap: 3rem;
+}
+
+.container p {
+	max-width: 40ch;
+	font-size: 1.4rem;
+}
+
+.container > p:first-of-type {
+	padding-block: 2rem;
+}
+
+.container > p:last-of-type {
+	padding-bottom: 2rem;
+}
