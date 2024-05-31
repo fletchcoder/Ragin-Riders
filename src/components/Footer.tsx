@@ -37,7 +37,7 @@ export default function Footer() {
 					</div>
 				</div>
 				<div className={styles.bottom}>
-					<h3>&#169; 2024 Ragin' Riders Sacramento</h3>
+					<h3>&#169; 2024 Ragin&apos; Riders Sacramento</h3>
 					<div className={styles.icons}>
 						<Link prefetch={false} href={"/"} className={styles.icon}>
 							<span>

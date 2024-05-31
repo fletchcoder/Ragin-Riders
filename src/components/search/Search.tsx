@@ -15,7 +15,7 @@ export default function Search({ search = "" }: { search?: string }) {
 		if (query) {
 			router.push(`/search?query=${query}`);
 		}
-	}, [query]);
+	}, [query, router]);
 
 	return (
 		<div>

@@ -42,7 +42,8 @@ export default async function BlogPost({
 			<section className={styles.container}>
 				<h1>{post.title}</h1>
 				<Image
-					src={"/battery.png"}
+					priority
+					src={post.image}
 					height={400}
 					width={400}
 					alt={`${post.title} Blog Image`}></Image>

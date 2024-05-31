@@ -33,7 +33,7 @@ export default function HomeNav() {
 							</Link>
 						</li>
 						<li>
-							<Link prefetch={false} href={"/join"}>
+							<Link prefetch={false} href={"/blogs"}>
 								Our Blogs
 							</Link>
 						</li>
@@ -48,7 +48,7 @@ export default function HomeNav() {
 						width={70}
 						height={70}></Image>
 					<Link prefetch={false} href={"/"}>
-						<h1>RAGIN' RIDERS</h1>
+						<h1>RAGIN&apos; RIDERS</h1>
 					</Link>
 				</div>
 
@@ -65,7 +65,7 @@ export default function HomeNav() {
 							</Link>
 						</li>
 						<li className={styles.hideOnMobile}>
-							<Link prefetch={false} href={"/join"}>
+							<Link prefetch={false} href={"/blogs"}>
 								Our Blogs
 							</Link>
 						</li>

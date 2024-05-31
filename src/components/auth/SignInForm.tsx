@@ -47,7 +47,7 @@ export default function SignInForm() {
 					/>
 					<button type="submit">Log In</button>
 				</form>
-				<Link href={"/signup"}>Don't have an account? Sign up here</Link>
+				<Link href={"/signup"}>Don&apos;t have an account? Sign up here</Link>
 				<Link href={"/shop"}>&larr; Back to Shop</Link>
 			</div>
 			{error && <p className={styles.error}>Email or password incorrect.</p>}

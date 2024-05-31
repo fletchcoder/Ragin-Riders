@@ -11,7 +11,11 @@ export default function AccountInfo() {
 		<div className={styles.info}>
 			<h2>Profile Pic:</h2>
 			<Image
-				src={auth.currentUser.image}
+				src={
+					auth.currentUser.username !== "N/A"
+						? auth.currentUser.image
+						: "/icon.ico"
+				}
 				height={200}
 				width={200}
 				alt="Profile Picture"></Image>

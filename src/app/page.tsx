@@ -20,14 +20,15 @@ export default function Home() {
 				<section className={styles.about}>
 					<h1>About Us</h1>
 					<p>
-						At Ragin' Riders, we provide the highest quality parts for our
+						At Ragin&apos; Riders, we provide the highest quality parts for our
 						customers. We started as a motorcycle repair shop and slowly
 						expanded into a full-fledged motorcycle store. Our small team
 						ensures intimate one-on-one customer interaction and smooth
 						transactions throughout the purchasing process. You can find all of
 						your motorcycle needs here - parts, gear, and accessories. For over
-						20 years, Ragin' Riders has served bikers in the Greater Sacramento
-						region. We guarantee customer satisfaction or your money back.
+						20 years, Ragin&apos; Riders has served bikers in the Greater
+						Sacramento region. We guarantee customer satisfaction or your money
+						back.
 					</p>
 				</section>
 				<section className={styles.products}>
