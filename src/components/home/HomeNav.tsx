@@ -14,9 +14,7 @@ export default function HomeNav() {
 				<nav>
 					<ul>
 						<li>
-							<Link prefetch={false} href={"/shop"}>
-								Shop
-							</Link>
+							<Link href={"/shop"}>Shop</Link>
 							<svg
 								onClick={() => showBar(!bar)}
 								className={styles.close}
@@ -28,14 +26,10 @@ export default function HomeNav() {
 							</svg>
 						</li>
 						<li>
-							<Link prefetch={false} href={"/contact"}>
-								Contact
-							</Link>
+							<Link href={"/contact"}>Contact</Link>
 						</li>
 						<li>
-							<Link prefetch={false} href={"/blogs"}>
-								Our Blogs
-							</Link>
+							<Link href={"/blogs"}>Our Blogs</Link>
 						</li>
 					</ul>
 				</nav>
@@ -47,7 +41,7 @@ export default function HomeNav() {
 						alt={`Logo for Ragin' Riders`}
 						width={70}
 						height={70}></Image>
-					<Link prefetch={false} href={"/"}>
+					<Link href={"/"}>
 						<h1>RAGIN&apos; RIDERS</h1>
 					</Link>
 				</div>
@@ -55,19 +49,13 @@ export default function HomeNav() {
 				<nav>
 					<ul>
 						<li className={styles.hideOnMobile}>
-							<Link prefetch={false} href={"/shop"}>
-								Shop
-							</Link>
+							<Link href={"/shop"}>Shop</Link>
 						</li>
 						<li className={styles.hideOnMobile}>
-							<Link prefetch={false} href={"/contact"}>
-								Contact
-							</Link>
+							<Link href={"/contact"}>Contact</Link>
 						</li>
 						<li className={styles.hideOnMobile}>
-							<Link prefetch={false} href={"/blogs"}>
-								Our Blogs
-							</Link>
+							<Link href={"/blogs"}>Our Blogs</Link>
 						</li>
 						<li className={styles.menu}>
 							<svg

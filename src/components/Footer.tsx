@@ -10,19 +10,13 @@ export default function Footer() {
 						<h2>Quick Links</h2>
 						<ul>
 							<li>
-								<Link prefetch={false} href={"/shop"}>
-									Shop Our Products
-								</Link>
+								<Link href={"/shop"}>Shop Our Products</Link>
 							</li>
 							<li>
-								<Link prefetch={false} href={"/contact"}>
-									Send Us a Message
-								</Link>
+								<Link href={"/contact"}>Send Us a Message</Link>
 							</li>
 							<li>
-								<Link prefetch={false} href={"/blogs"}>
-									Read Our Blogs
-								</Link>
+								<Link href={"/blogs"}>Read Our Blogs</Link>
 							</li>
 						</ul>
 					</div>
@@ -39,7 +33,7 @@ export default function Footer() {
 				<div className={styles.bottom}>
 					<h3>&#169; 2024 Ragin&apos; Riders Sacramento</h3>
 					<div className={styles.icons}>
-						<Link prefetch={false} href={"/"} className={styles.icon}>
+						<Link href={"/"} className={styles.icon}>
 							<span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +44,7 @@ export default function Footer() {
 								</svg>
 							</span>
 						</Link>
-						<Link prefetch={false} href={"/"} className={styles.icon}>
+						<Link href={"/"} className={styles.icon}>
 							<span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +55,7 @@ export default function Footer() {
 								</svg>
 							</span>
 						</Link>
-						<Link prefetch={false} href={"/"} className={styles.icon}>
+						<Link href={"/"} className={styles.icon}>
 							<span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +66,7 @@ export default function Footer() {
 								</svg>
 							</span>
 						</Link>
-						<Link prefetch={false} href={"/"} className={styles.icon}>
+						<Link href={"/"} className={styles.icon}>
 							<span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +78,7 @@ export default function Footer() {
 							</span>
 						</Link>
 
-						<Link prefetch={false} href={"/"} className={styles.icon}>
+						<Link href={"/"} className={styles.icon}>
 							<span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"

@@ -57,7 +57,7 @@ export default function Header({
 						width="50">
 						<path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
 					</svg>
-					<Link prefetch={false} href={"/"}>
+					<Link href={"/"}>
 						<Image
 							className={styles.logo}
 							src={"/icon.ico"}
@@ -68,19 +68,13 @@ export default function Header({
 					<nav>
 						<ul>
 							<li>
-								<Link prefetch={false} href={"/shop"}>
-									Shop
-								</Link>
+								<Link href={"/shop"}>Shop</Link>
 							</li>
 							<li>
-								<Link prefetch={false} href={"/contact"}>
-									Contact
-								</Link>
+								<Link href={"/contact"}>Contact</Link>
 							</li>
 							<li>
-								<Link prefetch={false} href={"/blogs"}>
-									Our Blogs
-								</Link>
+								<Link href={"/blogs"}>Our Blogs</Link>
 							</li>
 						</ul>
 					</nav>
@@ -142,9 +136,7 @@ export default function Header({
 				<nav>
 					<ul>
 						<li>
-							<Link prefetch={false} href={"/shop"}>
-								Shop
-							</Link>
+							<Link href={"/shop"}>Shop</Link>
 							<svg
 								onClick={() => {
 									toggleBar();
@@ -158,14 +150,10 @@ export default function Header({
 							</svg>
 						</li>
 						<li>
-							<Link prefetch={false} href={"/contact"}>
-								Contact
-							</Link>
+							<Link href={"/contact"}>Contact</Link>
 						</li>
 						<li>
-							<Link prefetch={false} href={"/blogs"}>
-								Our Blogs
-							</Link>
+							<Link href={"/blogs"}>Our Blogs</Link>
 						</li>
 					</ul>
 				</nav>
